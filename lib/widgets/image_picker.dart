@@ -27,7 +27,7 @@ class _HairDressImageProfileState extends State<HairDressImageProfile> {
             onTap: () async {
               try {
                 await showDialog(
-                    context: context, builder: (context) => ImageDialog());
+                    context: context, builder: (context) => ImageDialog());  // Eklenen resmi tıkladığında büyütmek için
               } catch (e) {
                 print(e);
               }

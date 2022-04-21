@@ -6,4 +6,6 @@ class MarginConst {
   static EdgeInsets feedAccountSetting = const EdgeInsets.only(left: 20);
   static EdgeInsets leftMargin = const EdgeInsets.only(left: 16);
   static EdgeInsets welcomeTextMargin = EdgeInsets.only(right: 10.w);
+
+  static EdgeInsets hairDressInfoMargin = EdgeInsets.only(left: 30.w);
 }

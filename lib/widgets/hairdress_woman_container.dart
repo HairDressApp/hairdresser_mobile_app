@@ -13,7 +13,7 @@ class HairDressWomanContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         print("Kadın Kuaför Tıklandı");
-        Navigator.of(context).pushNamed(feedPage);
+        Navigator.of(context).pushReplacementNamed(feedPage);
       },
       child: Container(
         width: 170.w,

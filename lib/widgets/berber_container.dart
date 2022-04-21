@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
+import 'package:hairdresser_mobile_app/routes/routes.dart';
 
 class BerberContainer extends StatelessWidget {
   const BerberContainer({Key? key}) : super(key: key);
@@ -10,6 +11,7 @@ class BerberContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         print("Berber Tıklandı");
+        Navigator.of(context).pushNamed(businessProfileDetail);
       },
       child: Container(
         width: 170.w,

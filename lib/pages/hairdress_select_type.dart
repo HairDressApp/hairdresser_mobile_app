@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
+import 'package:hairdresser_mobile_app/constans/images.dart';
 import 'package:hairdresser_mobile_app/constans/margins.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/constans/text_style.dart';
@@ -27,8 +28,10 @@ class HairDressSelectType extends StatelessWidget {
                 _welcomeText("Mustafa", context),
               ],
             ),
+            SizedBox(height: 100.h,),
+           Image.asset(ImageConstance.logoImage,width: 330.w, height: 100.h,),
             SizedBox(
-              height: 285.h,
+              height: 120.h,
             ),
             containersHairDress()
           ],

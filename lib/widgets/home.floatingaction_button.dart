@@ -9,7 +9,7 @@ class HomeFloatingActionButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return FloatingActionButton(
       onPressed: () {
-        Navigator.of(context).popAndPushNamed(hairdressSelectType);
+        Navigator.of(context).pushReplacementNamed(hairdressSelectType);
       },
       backgroundColor: ColorConstans.background,
       child: Icon(Icons.home),

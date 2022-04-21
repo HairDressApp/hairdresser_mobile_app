@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/pages/sign_in.dart';
 import 'package:hairdresser_mobile_app/providers/business_address_text_form.dart';
+import 'package:hairdresser_mobile_app/providers/business_image_pick.dart';
 import 'package:hairdresser_mobile_app/providers/business_sign_up.dart';
+import 'package:hairdresser_mobile_app/providers/favorite_icon.dart';
 import 'package:hairdresser_mobile_app/providers/hairdress_transaction.dart';
 import 'package:hairdresser_mobile_app/providers/hairdress_transaction_list.dart';
 import 'package:hairdresser_mobile_app/providers/hairdress_types.dart';
@@ -70,6 +72,12 @@ class MyApp extends StatelessWidget {
             ),
             ChangeNotifierProvider(
               create: (context) => UserPasswordChangeProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => FavoriteIconProvider(),
+            ),
+            ChangeNotifierProvider(
+              create: (context) => BusinessImagePickProvider(),
             ),
           ],
           child: MaterialApp(

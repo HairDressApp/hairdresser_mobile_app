@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:hairdresser_mobile_app/pages/busiess_another_sign_up.dart';
+import 'package:hairdresser_mobile_app/pages/business_profile_detail.dart';
 import 'package:hairdresser_mobile_app/pages/business_sign_up.dart';
-import 'package:hairdresser_mobile_app/pages/feed.dart';
+import 'package:hairdresser_mobile_app/pages/deep_ar.dart';
+import 'package:hairdresser_mobile_app/pages/face_deep_ar.dart';
+import 'package:hairdresser_mobile_app/pages/hairdress_feed.dart';
 import 'package:hairdresser_mobile_app/pages/hairdress_select_type.dart';
 import 'package:hairdresser_mobile_app/pages/sign_in.dart';
 import 'package:hairdresser_mobile_app/pages/sign_up.dart';
@@ -9,6 +12,7 @@ import 'package:hairdresser_mobile_app/pages/user_account_info.dart';
 import 'package:hairdresser_mobile_app/pages/user_account_setting.dart';
 import 'package:hairdresser_mobile_app/pages/user_favorites.dart';
 import 'package:hairdresser_mobile_app/pages/user_password_change.dart';
+import 'package:hairdresser_mobile_app/widgets/business_profile_detail/tab_and_pageview/full_screen_image_list.dart';
 
 class Routes {
   static Route<dynamic>? generateRoute(RouteSettings settings) {
@@ -61,6 +65,18 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => HairDressSelectType(),
         );
+      case deepAr:
+        return MaterialPageRoute(
+          builder: (context) => FaceDeepAr(),
+        );
+      case businessProfileDetail:
+        return MaterialPageRoute(
+          builder: (context) => BusinessProfileDetail(),
+        );
+      case fullScreenImage:
+        return MaterialPageRoute(
+          builder: (context) => FullScreenImageList(),
+        );
     }
   }
 }
@@ -75,3 +91,6 @@ const String userFavorities = "/userFavorities";
 const String userAccountInfo = "/userAccountInfo";
 const String userPasswordChange = "/userPasswordChange";
 const String hairdressSelectType = "/hairdressSelectType";
+const String deepAr = "/deepAr";
+const String businessProfileDetail = "/businessProfileDetail";
+const String fullScreenImage = "/fullScreenImageList";

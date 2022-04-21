@@ -34,7 +34,12 @@ class UserNavigationManu extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-            contactUs(),
+          
+            filtreApply(context),
+            SizedBox(
+              height: 10.h,
+            ),
+              contactUs(),
             SizedBox(
               height: 10.h,
             ),
@@ -46,7 +51,7 @@ class UserNavigationManu extends StatelessWidget {
               debugPrint("user navigatortaki sign out basıldı");
             }),
             SizedBox(
-              height: 290.h,
+              height: 250.h,
             ),
             versionText()
           ],
@@ -155,6 +160,33 @@ class UserNavigationManu extends StatelessWidget {
             ),
             Text(
               "Bize Ulaşın",
+              style: TextStyleCons.feedTextStyle,
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  filtreApply(BuildContext context) {
+    return InkWell(
+      onTap: () {
+        Navigator.of(context).pushNamed(deepAr);
+      },
+      child: Container(
+        padding: PaddingConst.feedTextPadding,
+        margin: MarginConst.feedAccountSetting,
+        child: Row(
+          children: [
+            Icon(
+              Icons.face,
+              size: 22,
+            ),
+            SizedBox(
+              width: 10.w,
+            ),
+            Text(
+              "Filtre Uygula",
               style: TextStyleCons.feedTextStyle,
             ),
           ],
