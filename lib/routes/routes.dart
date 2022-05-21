@@ -1,3 +1,5 @@
+import 'dart:collection';
+
 import 'package:flutter/material.dart';
 import 'package:hairdresser_mobile_app/pages/busiess_another_sign_up.dart';
 import 'package:hairdresser_mobile_app/pages/business_profile_detail.dart';
@@ -6,8 +8,10 @@ import 'package:hairdresser_mobile_app/pages/deep_ar.dart';
 import 'package:hairdresser_mobile_app/pages/face_deep_ar.dart';
 import 'package:hairdresser_mobile_app/pages/hairdress_feed.dart';
 import 'package:hairdresser_mobile_app/pages/hairdress_select_type.dart';
+import 'package:hairdresser_mobile_app/pages/password_forgot.dart';
 import 'package:hairdresser_mobile_app/pages/sign_in.dart';
 import 'package:hairdresser_mobile_app/pages/sign_up.dart';
+import 'package:hairdresser_mobile_app/pages/splash_screen.dart';
 import 'package:hairdresser_mobile_app/pages/user_account_info.dart';
 import 'package:hairdresser_mobile_app/pages/user_account_setting.dart';
 import 'package:hairdresser_mobile_app/pages/user_favorites.dart';
@@ -20,7 +24,11 @@ class Routes {
     var businessAnother = PageStorageKey("businessAnother");
 
     switch (settings.name) {
-      case home:
+      case splashScreen:
+        return MaterialPageRoute(
+          builder: (context) => SplashScreen(),
+        );
+      case signIn:
         return MaterialPageRoute(
           builder: (context) => SignInPage(),
         );
@@ -77,11 +85,16 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => FullScreenImageList(),
         );
+      case forgotPassword:
+        return MaterialPageRoute(
+          builder: (context) => ForgotPassword(),
+        );
     }
   }
 }
 
-const String home = "/";
+const String splashScreen = "/";
+const String signIn = "/signIn";
 const String signUppages = "/signUp";
 const String businessSignUp = "/businessSignUp";
 const String businessAnotherSignUp = "/businessAnotherSignUp";
@@ -94,3 +107,4 @@ const String hairdressSelectType = "/hairdressSelectType";
 const String deepAr = "/deepAr";
 const String businessProfileDetail = "/businessProfileDetail";
 const String fullScreenImage = "/fullScreenImageList";
+const String forgotPassword = "/forgotPassword";

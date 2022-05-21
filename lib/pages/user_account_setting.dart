@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
@@ -8,6 +9,8 @@ import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/widgets/feed_appbar.dart';
 import 'package:hairdresser_mobile_app/widgets/register_appbar.dart';
 import 'package:hairdresser_mobile_app/widgets/under_appbar_divider.dart';
+
+FirebaseAuth _auth = FirebaseAuth.instance;
 
 class UserAccountSetting extends StatelessWidget {
   const UserAccountSetting({Key? key}) : super(key: key);
@@ -33,7 +36,7 @@ class UserAccountSetting extends StatelessWidget {
           SizedBox(
             height: 20.h,
           ),
-          deleteAccount(),
+          deleteAccount(context),
         ],
       ),
     );
@@ -93,9 +96,15 @@ class UserAccountSetting extends StatelessWidget {
     );
   }
 
-  deleteAccount() {
+  deleteAccount(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        showDialog(
+            context: context,
+            builder: (context) {
+              return _alertUserDeleteDialog(context);
+            });
+      },
       child: Container(
         margin: MarginConst.feedAccountSetting,
         padding: PaddingConst.feedTextPadding,
@@ -116,5 +125,36 @@ class UserAccountSetting extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  AlertDialog _alertUserDeleteDialog(BuildContext context) {
+    return AlertDialog(
+              content: Text("Hesap Tamamen Silinecek"),
+              actions: [
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple
+                  ),
+                    onPressed: () {
+                      Navigator.of(context).pop();
+                    },
+                    child: Text("HAYIR")),
+                ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.purple
+                  ),
+                    onPressed: () {
+                      // Kullanıcıyı simek için
+                      var user = _auth.currentUser;
+                     // user!.delete().then((value) {
+                        // Sildikten sonra ne yapacak onu buraya yazacağız
+                     // }).catchError((onError) {
+                        // hata olursa da hatayı burada yakalacağız
+                     // });
+                    },
+                    child: Text("EVET")),
+              ],
+              title: Text("Hesap Silme"),
+            );
   }
 }

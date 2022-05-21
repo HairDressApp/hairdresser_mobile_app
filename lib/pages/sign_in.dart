@@ -1,9 +1,12 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/color_convert/hexcolor.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
+import 'package:hairdresser_mobile_app/data/firebase_database.dart';
 import 'package:hairdresser_mobile_app/email_control/email_control.dart';
+import 'package:hairdresser_mobile_app/model/user_modellogin.dart';
 import 'package:hairdresser_mobile_app/providers/login.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/widgets/business_create_button.dart';
@@ -18,6 +21,15 @@ class SignInPage extends StatefulWidget {
 }
 
 class _SignInPageState extends State<SignInPage> {
+  FirebaseDatabase _fireabaseAuth = FirebaseDatabase();
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    
+  }
+
   final _formController = GlobalKey<FormState>();
   late LoginProvider loginProvider;
   @override
@@ -139,6 +151,7 @@ class _SignInPageState extends State<SignInPage> {
       child: InkWell(
         onTap: () {
           // Şifremi Unuttum Sayfasına gidecek
+          Navigator.of(context).pushNamed(forgotPassword);
         },
         child: Container(
             margin: EdgeInsets.only(right: 0.07.sw),
@@ -158,9 +171,13 @@ class _SignInPageState extends State<SignInPage> {
       child: ElevatedButton(
           onPressed: () {
             if (_formController.currentState!.validate()) {
-              _formController.currentState!.save();   
+              _formController.currentState!.save();
+              String email = loginProvider.getEmail;
+              String password = loginProvider.getPassword;
+              UserModelLogin modelLogin =
+                  UserModelLogin(email: email, password: password);
+              _fireabaseAuth.userLogin(modelLogin, context);
             }
-            Navigator.of(context).pushNamed(hairdressSelectType);
           },
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(

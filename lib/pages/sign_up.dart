@@ -3,7 +3,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/color_convert/hexcolor.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
+import 'package:hairdresser_mobile_app/data/firebase_database.dart';
 import 'package:hairdresser_mobile_app/email_control/email_control.dart';
+import 'package:hairdresser_mobile_app/model/user_model.dart';
 import 'package:hairdresser_mobile_app/providers/register.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/toast/show_toast.dart';
@@ -20,7 +22,13 @@ class SignUpPage extends StatefulWidget {
 
 class _SignUpPageState extends State<SignUpPage> {
   late RegisterProvider _registerProvider;
-  final _formController = GlobalKey<FormState>();
+  final _formController = GlobalKey<FormState>(); // TextFormField Kontrol etmek için kullanılan key
+  FirebaseDatabase _firebaseAuth = FirebaseDatabase(); // Kayıt Database burada tuttum
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
   @override
   Widget build(BuildContext context) {
     _registerProvider = Provider.of<RegisterProvider>(context);
@@ -220,17 +228,31 @@ class _SignUpPageState extends State<SignUpPage> {
       height: 50.h,
       child: ElevatedButton(
         onPressed: () {
-          if (_formController.currentState!.validate()) {
+            if (_formController.currentState!.validate()) {
             _formController.currentState!.save();
+
+            String name = _registerProvider.getName;
+            String surname = _registerProvider.getSurname;
+            String email = _registerProvider.getEmail;
+            String password = _registerProvider.getPasswordAgain;
+            UserModel userModel = UserModel(
+                name: name, surname: surname, email: email, password: password);
+            _firebaseAuth.insert(userModel);
+            // _pref.insert(userModel); 
+
+            ToastShow.showToast(context, "Email Onaylama linki gönderildi",
+                duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+            Navigator.of(context).pushReplacementNamed(signIn);
           }
-         if(_registerProvider.getPassword != null && _registerProvider.getPasswordAgain !=null ){
+          if (_registerProvider.getPassword != null &&
+              _registerProvider.getPasswordAgain != null) {
             if (!_registerProvider.getPassword
-              .toString()
-              .contains(_registerProvider.passwordAgain.toString())) {
-            ToastShow.showToast(context, "Şifreler Uyumlu değil",
-                duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+                .toString()
+                .contains(_registerProvider.passwordAgain.toString())) {
+              ToastShow.showToast(context, "Şifreler Uyumlu değil",
+                  duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+            }
           }
-         }
         },
         style: ElevatedButton.styleFrom(
           primary: HexColor("#2ECC71"),
