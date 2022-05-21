@@ -7,7 +7,12 @@ import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/data/firebase_database.dart';
 import 'package:hairdresser_mobile_app/email_control/email_control.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:hairdresser_mobile_app/model/user_modellogin.dart';
+=======
+import 'package:hairdresser_mobile_app/model/usermodel_login.dart';
+import 'package:hairdresser_mobile_app/providers/locataion.dart';
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 import 'package:hairdresser_mobile_app/model/usermodel_login.dart';
 import 'package:hairdresser_mobile_app/providers/locataion.dart';
@@ -31,7 +36,10 @@ class SignInPage extends StatefulWidget {
 class _SignInPageState extends State<SignInPage> {
   FirebaseDatabase _fireabaseAuth = FirebaseDatabase();
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   @override
@@ -39,8 +47,11 @@ class _SignInPageState extends State<SignInPage> {
     // TODO: implement initState
     super.initState();
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 
     FirebaseAuth.instance.authStateChanges().listen((User? user) {
       if (user == null) {
@@ -51,6 +62,9 @@ class _SignInPageState extends State<SignInPage> {
         }
       }
     });
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   }
 
@@ -179,7 +193,12 @@ class _SignInPageState extends State<SignInPage> {
         onTap: () {
           // Şifremi Unuttum Sayfasına gidecek
 <<<<<<< HEAD
+<<<<<<< HEAD
           Navigator.of(context).pushNamed(forgotPassword);
+=======
+           Navigator.of(context).pushNamed(forgotPassword);
+  
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
            Navigator.of(context).pushNamed(forgotPassword);
   
@@ -206,18 +225,24 @@ class _SignInPageState extends State<SignInPage> {
               _formController.currentState!.save();
               String email = loginProvider.getEmail;
 <<<<<<< HEAD
+<<<<<<< HEAD
               String password = loginProvider.getPassword;
               UserModelLogin modelLogin =
                   UserModelLogin(email: email, password: password);
               _fireabaseAuth.userLogin(modelLogin, context);
             }
 =======
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
             String password = loginProvider.getPassword;
             UserModelLogin modelLogin =
                 UserModelLogin(email: email, password: password);
             _fireabaseAuth.userLogin(modelLogin, context);
             }
             
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
           },
           style: ElevatedButton.styleFrom(

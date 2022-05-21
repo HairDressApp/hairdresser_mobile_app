@@ -2,9 +2,15 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:hairdresser_mobile_app/data/localstoragedata.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:hairdresser_mobile_app/model/user_model.dart';
 import 'package:hairdresser_mobile_app/model/user_modellogin.dart';
 import 'package:hairdresser_mobile_app/model/user_modellogin.dart';
+=======
+import 'package:hairdresser_mobile_app/data/sharead_pref.dart';
+import 'package:hairdresser_mobile_app/model/user_model.dart';
+import 'package:hairdresser_mobile_app/model/usermodel_login.dart';
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 import 'package:hairdresser_mobile_app/data/sharead_pref.dart';
 import 'package:hairdresser_mobile_app/model/user_model.dart';
@@ -25,7 +31,11 @@ class FirebaseDatabase implements LocalStorageData {
 
     try {
 <<<<<<< HEAD
+<<<<<<< HEAD
       
+=======
+      SharedPrefencesStorage storage = SharedPrefencesStorage();
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
       SharedPrefencesStorage storage = SharedPrefencesStorage();
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -35,6 +45,10 @@ class FirebaseDatabase implements LocalStorageData {
       User user = userCredential.user!;
       if (user != null && !user.emailVerified) {
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+        storage.insert(model);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
         storage.insert(model);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -63,7 +77,11 @@ class FirebaseDatabase implements LocalStorageData {
         ToastShow.showToast(
             context, "Emailiniz onaylı değil lütfen onaylayınız",
 <<<<<<< HEAD
+<<<<<<< HEAD
             duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+=======
+            duration: Toast.lengthLong,gravity: Toast.bottom);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
             duration: Toast.lengthLong,gravity: Toast.bottom);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -72,7 +90,11 @@ class FirebaseDatabase implements LocalStorageData {
     } catch (e) {
       ToastShow.showToast(context, "Geçersiz bilgiler",
 <<<<<<< HEAD
+<<<<<<< HEAD
           duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+=======
+          duration: Toast.lengthLong,gravity: Toast.bottom);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
           duration: Toast.lengthLong,gravity: Toast.bottom);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -85,7 +107,11 @@ class FirebaseDatabase implements LocalStorageData {
     } catch (e) {
       ToastShow.showToast(context, "Bu email'e kayıtlı kullanıcı yok",
 <<<<<<< HEAD
+<<<<<<< HEAD
           duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+=======
+          duration: Toast.lengthLong,gravity: Toast.bottom);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
           duration: Toast.lengthLong,gravity: Toast.bottom);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7

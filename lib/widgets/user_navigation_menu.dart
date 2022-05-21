@@ -13,7 +13,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 FirebaseAuth _auth = FirebaseAuth.instance;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class UserNavigationManu extends StatelessWidget {
+=======
+class UserNavigationManu extends StatefulWidget {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 class UserNavigationManu extends StatefulWidget {
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -70,7 +74,11 @@ class _UserNavigationManuState extends State<UserNavigationManu> {
             SignOut(onTap: () {
               _auth.signOut();
 <<<<<<< HEAD
+<<<<<<< HEAD
               Navigator.of(context).pushReplacementNamed(signIn);
+=======
+              Navigator.of(context).pushReplacementNamed(home);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
               Navigator.of(context).pushReplacementNamed(home);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7

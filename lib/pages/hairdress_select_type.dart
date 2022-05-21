@@ -8,12 +8,18 @@ import 'package:hairdresser_mobile_app/constans/margins.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/constans/text_style.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 =======
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 import 'package:hairdresser_mobile_app/data/sharead_pref.dart';
 import 'package:hairdresser_mobile_app/model/user_model.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/toast/show_toast.dart';
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 import 'package:hairdresser_mobile_app/widgets/beauty_saloon_container.dart';
 import 'package:hairdresser_mobile_app/widgets/berber_container.dart';
@@ -24,7 +30,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 FirebaseAuth _auth = FirebaseAuth.instance;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 class HairDressSelectType extends StatelessWidget {
+=======
+class HairDressSelectType extends StatefulWidget {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 class HairDressSelectType extends StatefulWidget {
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -115,10 +125,15 @@ class _HairDressSelectTypeState extends State<HairDressSelectType> {
             position: RelativeRect.fromLTRB(400.0.w, 90.0.h, 0.0, 0.0),
             items: [
 <<<<<<< HEAD
+<<<<<<< HEAD
               PopupMenuItem(child: SignOut(onTap: (){
                 _auth.signOut();
                 Navigator.of(context).pushReplacementNamed(signIn);
               })),
+=======
+              PopupMenuItem(child: SignOut(onTap: () {_auth.signOut();
+              Navigator.of(context).pushReplacementNamed(home);})),
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
               PopupMenuItem(child: SignOut(onTap: () {_auth.signOut();
               Navigator.of(context).pushReplacementNamed(home);})),

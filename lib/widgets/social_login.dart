@@ -2,7 +2,10 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -27,6 +30,10 @@ class SocialMediaLogin extends StatefulWidget {
 class _SocialMediaLoginState extends State<SocialMediaLogin> {
   late LoginProvider _loginProvider;
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -55,9 +62,14 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
       child: ElevatedButton(
           onPressed: () {
 <<<<<<< HEAD
+<<<<<<< HEAD
             signInWithGoogle().catchError((onError) => ToastShow.showToast(
                 context, onError.toString(),
                 duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM));
+=======
+            signInWithGoogle().catchError((onError) => ToastShow.showToast(context, onError.toString(),duration: Toast.lengthLong,gravity: Toast.bottom)              
+                );
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
             signInWithGoogle().catchError((onError) => ToastShow.showToast(context, onError.toString(),duration: Toast.lengthLong,gravity: Toast.bottom)              
                 );
@@ -187,7 +199,11 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
   }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   triggerFacebookAuthentication() {
+=======
+   triggerFacebookAuthentication() {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
    triggerFacebookAuthentication() {
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -195,6 +211,7 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
     return FacebookAuthProvider.FACEBOOK_SIGN_IN_METHOD;
   }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
   Future<UserCredential> signInWithFacebook() async {
     // FACEBOOK İLE GİRİŞ İÇİN KULLANIYOR
@@ -268,6 +285,8 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
       return Future.error("Böyle bir kullanıcı normal hesap olarak kayıtlı");
     }
   }
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 }

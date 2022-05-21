@@ -8,7 +8,14 @@ import 'package:hairdresser_mobile_app/constans/key_constans.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/data/firebase_database.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
 import 'package:hairdresser_mobile_app/email_control/email_control.dart';
+=======
+import 'package:hairdresser_mobile_app/data/localstoragedata.dart';
+import 'package:hairdresser_mobile_app/data/sharead_pref.dart';
+import 'package:hairdresser_mobile_app/email_control/email_control.dart';
+import 'package:hairdresser_mobile_app/main.dart';
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 import 'package:hairdresser_mobile_app/data/localstoragedata.dart';
 import 'package:hairdresser_mobile_app/data/sharead_pref.dart';
@@ -43,6 +50,9 @@ class _SignUpPageState extends State<SignUpPage> {
 
   late SharedPreferences _pref;
   FirebaseDatabase _firebaseAuth = FirebaseDatabase();
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   @override
   void initState() {
@@ -50,6 +60,10 @@ class _SignUpPageState extends State<SignUpPage> {
     super.initState();
   }
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -257,9 +271,12 @@ class _SignUpPageState extends State<SignUpPage> {
       height: 50.h,
       child: ElevatedButton(
 <<<<<<< HEAD
+<<<<<<< HEAD
         onPressed: () {
             if (_formController.currentState!.validate()) {
 =======
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
         onPressed: () async {
           if (_formController.currentState!.validate()) {
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -273,12 +290,15 @@ class _SignUpPageState extends State<SignUpPage> {
                 name: name, surname: surname, email: email, password: password);
             _firebaseAuth.insert(userModel);
 <<<<<<< HEAD
+<<<<<<< HEAD
             // _pref.insert(userModel); 
 
             ToastShow.showToast(context, "Email Onaylama linki gönderildi",
                 duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
             Navigator.of(context).pushReplacementNamed(signIn);
 =======
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
             // _pref.insert(userModel);
 
             try {
@@ -292,6 +312,9 @@ class _SignUpPageState extends State<SignUpPage> {
             ToastShow.showToast(context, "Email Onaylama linki gönderildi",
                 duration: Toast.lengthLong,gravity: Toast.bottom);
             Navigator.of(context).pushReplacementNamed(home);
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
           }
           if (_registerProvider.getPassword != null &&
@@ -301,7 +324,11 @@ class _SignUpPageState extends State<SignUpPage> {
                 .contains(_registerProvider.passwordAgain.toString())) {
               ToastShow.showToast(context, "Şifreler Uyumlu değil",
 <<<<<<< HEAD
+<<<<<<< HEAD
                   duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+=======
+                  duration: Toast.lengthLong,gravity: Toast.bottom);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
                   duration: Toast.lengthLong,gravity: Toast.bottom);
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7

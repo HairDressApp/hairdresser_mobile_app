@@ -1,5 +1,9 @@
 import 'package:firebase_core/firebase_core.dart';
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+import 'package:flutter/foundation.dart';
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
 import 'package:flutter/foundation.dart';
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
@@ -36,6 +40,7 @@ import 'package:provider/provider.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
@@ -52,6 +57,11 @@ void main() async {
 //import 'package:geocoding/geocoding.dart';
 //import 'package:geolocator/geolocator.dart';
 
+=======
+//import 'package:geocoding/geocoding.dart';
+//import 'package:geolocator/geolocator.dart';
+
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 GetIt getIt = GetIt.instance;
 void setup() {
   getIt.registerSingleton<LocalStorageData>(SharedPrefencesStorage(),
@@ -77,6 +87,9 @@ void main() async {
   ]) // Uygulamayı sadece dikey olarak çalıştıyor.
       .then((value) => runApp(ChangeNotifierProvider(
           create: (_) => LocationDataProvier(), child: MyApp())));
+<<<<<<< HEAD
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
+=======
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 }
 
@@ -89,10 +102,27 @@ class MyApp extends StatefulWidget {
 
 class _MyAppState extends State<MyApp> {
 <<<<<<< HEAD
+<<<<<<< HEAD
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
   @override
   Widget build(BuildContext context) {
      return FutureBuilder(
+=======
+  late LocationDataProvier _locationProvider;
+  final Future<FirebaseApp> _initialization = Firebase.initializeApp();
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    _locationPermissionController();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    _locationProvider =
+        Provider.of<LocationDataProvier>(context, listen: false);
+    return FutureBuilder(
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
   late LocationDataProvier _locationProvider;
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
@@ -127,7 +157,11 @@ class _MyAppState extends State<MyApp> {
             minTextAdapt: true,
             splitScreenMode: true,
 <<<<<<< HEAD
+<<<<<<< HEAD
             builder: () {
+=======
+            builder: (context,child) {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 =======
             builder: (context,child) {
 >>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
