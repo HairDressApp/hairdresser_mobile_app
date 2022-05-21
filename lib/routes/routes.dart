@@ -6,6 +6,7 @@ import 'package:hairdresser_mobile_app/pages/deep_ar.dart';
 import 'package:hairdresser_mobile_app/pages/face_deep_ar.dart';
 import 'package:hairdresser_mobile_app/pages/hairdress_feed.dart';
 import 'package:hairdresser_mobile_app/pages/hairdress_select_type.dart';
+import 'package:hairdresser_mobile_app/pages/password_forgot.dart';
 import 'package:hairdresser_mobile_app/pages/sign_in.dart';
 import 'package:hairdresser_mobile_app/pages/sign_up.dart';
 import 'package:hairdresser_mobile_app/pages/user_account_info.dart';
@@ -77,6 +78,10 @@ class Routes {
         return MaterialPageRoute(
           builder: (context) => FullScreenImageList(),
         );
+      case forgotPassword:
+        return MaterialPageRoute(
+          builder: (context) => ForgotPassword(),
+        );
     }
   }
 }
@@ -94,3 +99,5 @@ const String hairdressSelectType = "/hairdressSelectType";
 const String deepAr = "/deepAr";
 const String businessProfileDetail = "/businessProfileDetail";
 const String fullScreenImage = "/fullScreenImageList";
+const String forgotPassword = "/forgotPassword";
+

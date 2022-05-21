@@ -11,7 +11,6 @@ class BerberContainer extends StatelessWidget {
     return InkWell(
       onTap: () {
         print("Berber Tıklandı");
-        Navigator.of(context).pushNamed(businessProfileDetail);
       },
       child: Container(
         width: 170.w,

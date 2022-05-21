@@ -8,9 +8,9 @@ class BusinessProfilImage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CircleAvatar(
       radius: 70,
-      backgroundImage: null,
+      backgroundImage: AssetImage(ImageConstance.kuaforProfilImage),
       backgroundColor: Colors.transparent,
-      child: Image.asset(ImageConstance.profileHairdressDefault),
+      //child: Image.asset(ImageConstance.kuaforProfilImage,),
     );
   }
 }

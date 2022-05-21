@@ -9,7 +9,7 @@ class HairDressPhone extends StatelessWidget {
     return Container(
       margin: MarginConst.hairDressInfoMargin,
       child: Text(
-        "HairDress Phone",
+        "+905467415896",
         style: TextStyle(fontSize: 16),
       ),
     );

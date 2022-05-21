@@ -27,4 +27,5 @@ class ImageConstance {
   // ***************************************************************
 
   static String logoImage = "assets/images/kuaf@4x.png";
+  static String kuaforProfilImage = "assets/images/1.jpg";
 }

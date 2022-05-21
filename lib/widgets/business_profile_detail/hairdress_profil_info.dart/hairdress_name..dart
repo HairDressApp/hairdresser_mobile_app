@@ -10,7 +10,7 @@ class HairDressName extends StatelessWidget {
     return Container(
       margin: MarginConst.hairDressInfoMargin,
       child: Text(
-        "HairDress Name",
+        "Arzum Bayan Kuaför",
         style: TextStyle(fontSize: 16),
       ),
     );

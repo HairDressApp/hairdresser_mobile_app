@@ -1,14 +1,31 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
+import 'package:hairdresser_mobile_app/constans/key_constans.dart';
 import 'package:hairdresser_mobile_app/constans/margins.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/constans/text_style.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/widgets/sign_out.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-class UserNavigationManu extends StatelessWidget {
+FirebaseAuth _auth = FirebaseAuth.instance;
+
+class UserNavigationManu extends StatefulWidget {
   const UserNavigationManu({Key? key}) : super(key: key);
+
+  @override
+  State<UserNavigationManu> createState() => _UserNavigationManuState();
+}
+
+class _UserNavigationManuState extends State<UserNavigationManu> {
+  late SharedPreferences _pref;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -34,12 +51,11 @@ class UserNavigationManu extends StatelessWidget {
             SizedBox(
               height: 10.h,
             ),
-          
             filtreApply(context),
             SizedBox(
               height: 10.h,
             ),
-              contactUs(),
+            contactUs(),
             SizedBox(
               height: 10.h,
             ),
@@ -48,7 +64,8 @@ class UserNavigationManu extends StatelessWidget {
               height: 20.h,
             ),
             SignOut(onTap: () {
-              debugPrint("user navigatortaki sign out basıldı");
+              _auth.signOut();
+              Navigator.of(context).pushReplacementNamed(home);
             }),
             SizedBox(
               height: 250.h,
@@ -193,5 +210,9 @@ class UserNavigationManu extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _localInit() async {
+    await SharedPreferences.getInstance();
   }
 }
