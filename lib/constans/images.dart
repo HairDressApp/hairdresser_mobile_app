@@ -27,5 +27,7 @@ class ImageConstance {
   // ***************************************************************
 
   static String logoImage = "assets/images/kuaf@4x.png";
+
   static String splashIconAnim = "assets/animationJson/splash_animation.json";
+
 }

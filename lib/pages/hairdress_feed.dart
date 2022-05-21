@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/constans/sehirler.dart';
 import 'package:hairdresser_mobile_app/providers/search_select_sehir.dart';
+import 'package:hairdresser_mobile_app/widgets/hairdress_list.dart';
 import 'package:hairdresser_mobile_app/widgets/home.floatingaction_button.dart';
 import 'package:hairdresser_mobile_app/widgets/search_select.dart';
 import 'package:hairdresser_mobile_app/widgets/user_navigation_menu.dart';
@@ -51,10 +53,14 @@ class _FeedPageState extends State<FeedPage> {
         ],
       ),
       drawer: UserNavigationManu(),
-      body: Container(
-        child: Center(
-          child: Text(_sehirProvider.selectSehir.toString()),
-        ),
+      body: Column(
+        children: [
+          SizedBox(height: 20.h,),
+          Expanded(child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: HairDressList(),
+          )), // Kuaförlerin listlemesi için 
+        ],
       ),
       floatingActionButton: HomeFloatingActionButton(),
     );

@@ -6,12 +6,20 @@ import 'package:hairdresser_mobile_app/constans/colors.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/data/firebase_database.dart';
 import 'package:hairdresser_mobile_app/email_control/email_control.dart';
+<<<<<<< HEAD
 import 'package:hairdresser_mobile_app/model/user_modellogin.dart';
+=======
+import 'package:hairdresser_mobile_app/model/usermodel_login.dart';
+import 'package:hairdresser_mobile_app/providers/locataion.dart';
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 import 'package:hairdresser_mobile_app/providers/login.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/widgets/business_create_button.dart';
 import 'package:hairdresser_mobile_app/widgets/social_login.dart';
+import 'package:location/location.dart';
 import 'package:provider/provider.dart';
+
+FirebaseAuth _auth = FirebaseAuth.instance;
 
 class SignInPage extends StatefulWidget {
   const SignInPage({Key? key}) : super(key: key);
@@ -22,19 +30,38 @@ class SignInPage extends StatefulWidget {
 
 class _SignInPageState extends State<SignInPage> {
   FirebaseDatabase _fireabaseAuth = FirebaseDatabase();
+<<<<<<< HEAD
 
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+<<<<<<< HEAD
     
+=======
+
+    FirebaseAuth.instance.authStateChanges().listen((User? user) {
+      if (user == null) {
+        print('email onaylı değil, lütfen onaylayınız');
+      } else {
+        if(user.emailVerified){
+            Navigator.of(context).pushReplacementNamed(hairdressSelectType);
+        }
+      }
+    });
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   }
 
   final _formController = GlobalKey<FormState>();
   late LoginProvider loginProvider;
+  late LocationDataProvier locationProvider;
   @override
   Widget build(BuildContext context) {
     loginProvider = Provider.of<LoginProvider>(context);
+    locationProvider = Provider.of<LocationDataProvier>(context, listen: false);
+
     return Scaffold(
       backgroundColor: ColorConstans.background,
       body: SafeArea(
@@ -151,7 +178,12 @@ class _SignInPageState extends State<SignInPage> {
       child: InkWell(
         onTap: () {
           // Şifremi Unuttum Sayfasına gidecek
+<<<<<<< HEAD
           Navigator.of(context).pushNamed(forgotPassword);
+=======
+           Navigator.of(context).pushNamed(forgotPassword);
+  
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
         },
         child: Container(
             margin: EdgeInsets.only(right: 0.07.sw),
@@ -173,11 +205,20 @@ class _SignInPageState extends State<SignInPage> {
             if (_formController.currentState!.validate()) {
               _formController.currentState!.save();
               String email = loginProvider.getEmail;
+<<<<<<< HEAD
               String password = loginProvider.getPassword;
               UserModelLogin modelLogin =
                   UserModelLogin(email: email, password: password);
               _fireabaseAuth.userLogin(modelLogin, context);
             }
+=======
+            String password = loginProvider.getPassword;
+            UserModelLogin modelLogin =
+                UserModelLogin(email: email, password: password);
+            _fireabaseAuth.userLogin(modelLogin, context);
+            }
+            
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
           },
           style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(

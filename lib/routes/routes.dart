@@ -108,3 +108,7 @@ const String deepAr = "/deepAr";
 const String businessProfileDetail = "/businessProfileDetail";
 const String fullScreenImage = "/fullScreenImageList";
 const String forgotPassword = "/forgotPassword";
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7

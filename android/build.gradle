@@ -3,11 +3,18 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+         maven {
+            url 'https://dl.bintray.com/android/android-tools'
+        }
     } 
      //grandle:4.1.0
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.0'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+<<<<<<< HEAD
+=======
+        //classpath 'com.google.gms:google-services:4.0.1'
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
         classpath 'com.google.gms:google-services:4.3.10'
     }
 }

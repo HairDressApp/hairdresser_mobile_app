@@ -1,7 +1,10 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+<<<<<<< HEAD
 import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:hairdresser_mobile_app/color_convert/hexcolor.dart';
@@ -23,6 +26,10 @@ class SocialMediaLogin extends StatefulWidget {
 
 class _SocialMediaLoginState extends State<SocialMediaLogin> {
   late LoginProvider _loginProvider;
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   @override
   Widget build(BuildContext context) {
     _loginProvider = Provider.of<LoginProvider>(context);
@@ -47,9 +54,14 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
       height: 60.h,
       child: ElevatedButton(
           onPressed: () {
+<<<<<<< HEAD
             signInWithGoogle().catchError((onError) => ToastShow.showToast(
                 context, onError.toString(),
                 duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM));
+=======
+            signInWithGoogle().catchError((onError) => ToastShow.showToast(context, onError.toString(),duration: Toast.lengthLong,gravity: Toast.bottom)              
+                );
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
           },
           style: ElevatedButton.styleFrom(
               primary: HexColor("#CE2626"),
@@ -174,11 +186,16 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
     return Future.delayed(Duration.zero);
   }
 
+<<<<<<< HEAD
   triggerFacebookAuthentication() {
+=======
+   triggerFacebookAuthentication() {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
     // Facebook accesToken yarattık
     return FacebookAuthProvider.FACEBOOK_SIGN_IN_METHOD;
   }
 
+<<<<<<< HEAD
   Future<UserCredential> signInWithFacebook() async {
     // FACEBOOK İLE GİRİŞ İÇİN KULLANIYOR
     // Trigger the sign-in flow
@@ -251,4 +268,6 @@ class _SocialMediaLoginState extends State<SocialMediaLogin> {
       return Future.error("Böyle bir kullanıcı normal hesap olarak kayıtlı");
     }
   }
+=======
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
 }

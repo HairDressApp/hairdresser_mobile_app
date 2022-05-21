@@ -2,16 +2,34 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:hairdresser_mobile_app/constans/colors.dart';
+import 'package:hairdresser_mobile_app/constans/key_constans.dart';
 import 'package:hairdresser_mobile_app/constans/margins.dart';
 import 'package:hairdresser_mobile_app/constans/padding.dart';
 import 'package:hairdresser_mobile_app/constans/text_style.dart';
 import 'package:hairdresser_mobile_app/routes/routes.dart';
 import 'package:hairdresser_mobile_app/widgets/sign_out.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 FirebaseAuth _auth = FirebaseAuth.instance;
 
+<<<<<<< HEAD
 class UserNavigationManu extends StatelessWidget {
+=======
+class UserNavigationManu extends StatefulWidget {
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
   const UserNavigationManu({Key? key}) : super(key: key);
+
+  @override
+  State<UserNavigationManu> createState() => _UserNavigationManuState();
+}
+
+class _UserNavigationManuState extends State<UserNavigationManu> {
+  late SharedPreferences _pref;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -51,7 +69,11 @@ class UserNavigationManu extends StatelessWidget {
             ),
             SignOut(onTap: () {
               _auth.signOut();
+<<<<<<< HEAD
               Navigator.of(context).pushReplacementNamed(signIn);
+=======
+              Navigator.of(context).pushReplacementNamed(home);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
             }),
             SizedBox(
               height: 250.h,
@@ -196,5 +218,9 @@ class UserNavigationManu extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  _localInit() async {
+    await SharedPreferences.getInstance();
   }
 }

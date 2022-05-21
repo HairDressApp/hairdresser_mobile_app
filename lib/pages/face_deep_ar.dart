@@ -120,7 +120,14 @@ class _MyAppState extends State<FaceDeepAr> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: () {
-        Navigator.of(context).pushReplacementNamed(feedPage);
+        try {
+          Navigator.of(context).pushReplacementNamed(feedPage);
+        } on PlatformException catch (e) {
+          print(e.toString());
+        } catch (e) {
+          print("aa: " + e.toString());
+        }
+
         return Future.value(false);
       },
       child: Scaffold(

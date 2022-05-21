@@ -80,11 +80,19 @@ class _ForgotPasswordState extends State<ForgotPassword> {
           onPressed: () {
             if (!EmailPattent.isEmail(_textEdiiton.text)) {
               ToastShow.showToast(context, "Geçersiz Email",
+<<<<<<< HEAD
                   duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
             } else {
               _firebase.passwordForgot(_textEdiiton.text, context);
               ToastShow.showToast(context, "Email Resetleme Linki Gönderildi",
                   duration: Toast.LENGTH_LONG,gravity: Toast.BOTTOM);
+=======
+                  duration: Toast.lengthLong,gravity: Toast.bottom);
+            } else {
+              _firebase.passwordForgot(_textEdiiton.text, context);
+              ToastShow.showToast(context, "Email Resetleme Linki Gönderildi",
+                  duration: Toast.lengthLong,gravity: Toast.bottom);
+>>>>>>> 2d74bd0f300de027349fcf490874d4688e6da4c7
             }
           },
           style: ElevatedButton.styleFrom(

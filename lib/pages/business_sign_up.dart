@@ -224,7 +224,7 @@ class _BusinessSignUpState extends State<BusinessSignUp> {
                 .toString()
                 .contains(_businessProvider.getPasswordAgain.toString())) {
               ToastShow.showToast(context, "Şifreler Uyumlu değil",
-                  duration: Toast.LENGTH_LONG, gravity: Toast.BOTTOM);
+                  duration: Toast.lengthLong,gravity: Toast.bottom);
             }
           }
                       Navigator.of(context).pushNamed(businessAnotherSignUp); 
